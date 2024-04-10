@@ -1,3 +1,4 @@
+# FROM osrf/ros:noetic-desktop
 FROM osrf/ros:rolling-desktop
 
 LABEL NAME="ortools_vendor" \
@@ -6,7 +7,6 @@ LABEL NAME="ortools_vendor" \
 
 ENV DEBIAN_FRONTEND noninteractive
 
-WORKDIR /workspaces/
 
 RUN apt-get update --allow-insecure-repositories -y && \
     apt-get install -y --allow-unauthenticated --no-install-recommends ca-certificates
@@ -14,14 +14,21 @@ RUN apt-get update --allow-insecure-repositories -y && \
 RUN apt-get install -y --allow-unauthenticated --no-install-recommends \
                     build-essential \
                     ca-certificates \
+                    ros-rolling-ament-cmake-vendor-package \
                     git \
                     ranger \
-                    vim \
-                    ros-rolling-ament-cmake-vendor-package
+                    vim
+
+# WORKDIR /catkin_ws/src
+WORKDIR /workspace
+
+
+RUN git clone https://github.com/Fields2Cover/Fields2Cover
+
+# COPY . /catkin_ws/src/ortools_vendor
+# WORKDIR /catkin_ws/
 
 COPY . /workspace/ortools_vendor
-
-WORKDIR /workspace/ortools_vendor
 
 
 
