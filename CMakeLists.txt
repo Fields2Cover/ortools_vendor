@@ -3,6 +3,10 @@ project(ortools_vendor LANGUAGES CXX VERSION "9.9.0")
 
 set(CMAKE_CXX_STANDARD 17)
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif(NOT CMAKE_BUILD_TYPE)
+
 
 if(ament_cmake_FOUND)
   find_package(ament_cmake REQUIRED)
