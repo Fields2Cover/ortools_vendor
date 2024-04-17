@@ -16,7 +16,7 @@
   <url type="website">https://github.com/google/or-tools</url>
 
   <exec_depend condition="$ROS_VERSION == 1">catkin</exec_depend>
-  <buildtool_depend condition="$ROS_VERSION == 1" version_gte="3.18">cmake</buildtool_depend>
+  <buildtool_depend condition="$ROS_VERSION == 1" version_gte="3.15">cmake</buildtool_depend>
   <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
   <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake_vendor_package</buildtool_depend>
 
