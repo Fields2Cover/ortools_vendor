@@ -3,9 +3,7 @@ project(ortools_vendor LANGUAGES CXX VERSION "9.9.0")
 
 set(CMAKE_CXX_STANDARD 17)
 
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
-endif(NOT CMAKE_BUILD_TYPE)
+set(CMAKE_BUILD_TYPE Release)
 
 
 if(ament_cmake_FOUND)
@@ -24,6 +22,7 @@ if(ament_cmake_FOUND)
     VCS_VERSION v9.9
     CMAKE_ARGS
       "-DCMAKE_CXX_FLAGS=${ORTOOLS_CXX_FLAGS}"
+      -DCMAKE_BUILD_TYPE=Release
       -DBUILD_DEPS:BOOL=ON
       -DBUILD_SAMPLES:BOOL=OFF
       -DBUILD_EXAMPLES:BOOL=OFF
