@@ -5,12 +5,10 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_BUILD_TYPE Release)
 
-
+find_package(ament_cmake)
 if(ament_cmake_FOUND)
   find_package(ament_cmake REQUIRED)
   find_package(ament_cmake_vendor_package REQUIRED)
-
-  ament_add_default_options()
 
   find_package(ortools QUIET NO_CMAKE_PACKAGE_REGISTRY)
 
@@ -29,7 +27,7 @@ if(ament_cmake_FOUND)
   )
 
   ament_package(
-    CONFIG_EXTRAS "ortools_vendor-extras.cmake.in"
+    CONFIG_EXTRAS "ortools_vendor-extras.cmake"
   )
 else(ament_cmake_FOUND)
   set(BUILD_DEPS ON)
