@@ -24,6 +24,18 @@ if(ament_cmake_FOUND)
       -DBUILD_DEPS:BOOL=ON
       -DBUILD_SAMPLES:BOOL=OFF
       -DBUILD_EXAMPLES:BOOL=OFF
+      -DBUILD_LP_PARSER:BOOL=OFF
+      -DBUILD_MATH_OPT:BOOL=OFF
+      -DUSE_BOP:BOOL=OFF
+      -DUSE_COINOR:BOOL=OFF
+      -DUSE_CPLEX:BOOL=OFF
+      -DUSE_GLOP:BOOL=OFF
+      -DUSE_GLPK:BOOL=OFF
+      -DUSE_GUROBI:BOOL=ON #OFF not supported since dynamically loaded
+      -DUSE_HIGHS:BOOL=OFF
+      -DUSE_PDLP:BOOL=OFF
+      -DUSE_SCIP:BOOL=OFF
+      -DUSE_XPRESS:BOOL=OFF
   )
 
   ament_package(
