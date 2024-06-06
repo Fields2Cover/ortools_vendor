@@ -1,0 +1,8 @@
+set(ORTOOLS_DIR "${@PROJECT_NAME@_DIR}/../../../opt/ortools_vendor")
+list(INSERT CMAKE_PREFIX_PATH 0 "${ORTOOLS_DIR}")
+message(STATUS "Prepending to CMAKE_PREFIX_PATH: '${ORTOOLS_DIR}'")
+find_package(ortools REQUIRED NO_SYSTEM_ENVIRONMENT_PATH)
+
+add_library(ortools_vendor::ortools ALIAS ortools::ortools)
+
+
