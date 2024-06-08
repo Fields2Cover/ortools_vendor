@@ -12,6 +12,7 @@ ament_vendor(ortools_vendor
     -DBUILD_DEPS:BOOL=ON
     -DBUILD_SAMPLES:BOOL=OFF
     -DBUILD_EXAMPLES:BOOL=OFF
+  PATCHES patches
 )
 
 if(BUILD_TESTING)
