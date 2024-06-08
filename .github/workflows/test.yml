@@ -34,6 +34,5 @@ jobs:
           DEB_DISTRO: noble
           DEB_ARCH: amd64
           ROS_DISTRO: jazzy
-          SBUILD_CONF:
-            ENABLE_NETWORK: 1
+          SBUILD_CONF: $enable_network = 1;
           REPOS_FILE: .github/sources.repos
