@@ -1,0 +1,10 @@
+# Colcon output
+build
+log
+install
+
+#Vim
+*.swp
+
+/debian
+/.obj*

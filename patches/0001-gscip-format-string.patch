@@ -1,0 +1,49 @@
+diff --git a/ortools/gscip/gscip_constraint_handler.cc b/ortools/gscip/gscip_constraint_handler.cc
+index 21c9b07..7b7f320 100644
+--- a/ortools/gscip/gscip_constraint_handler.cc
++++ b/ortools/gscip/gscip_constraint_handler.cc
+@@ -428,7 +428,7 @@ static SCIP_DECL_CONSENFOLP(EnforceLpC) {
+           conss, nusefulconss, nconss, DoEnforceLp,
+           operations_research::ConstraintHandlerCallbackType::kEnfoLp);
+   if (!gresult.ok()) {
+-    SCIPerrorMessage(gresult.status().ToString().c_str());
++    SCIPerrorMessage("%s", gresult.status().ToString().c_str());
+     return SCIP_ERROR;
+   }
+   *result = operations_research::ConvertGScipCallbackResult(*gresult);
+@@ -456,7 +456,7 @@ static SCIP_DECL_CONSENFOPS(EnforcePseudoSolutionC) {
+           conss, nusefulconss, nconss, DoEnforcePseudoSolution,
+           operations_research::ConstraintHandlerCallbackType::kEnfoPs);
+   if (!gresult.ok()) {
+-    SCIPerrorMessage(gresult.status().ToString().c_str());
++    SCIPerrorMessage("%s", gresult.status().ToString().c_str());
+     return SCIP_ERROR;
+   }
+   *result = operations_research::ConvertGScipCallbackResult(*gresult);
+@@ -485,7 +485,7 @@ static SCIP_DECL_CONSCHECK(CheckFeasibilityC) {
+           conss, nconss, nconss, DoCheckIsFeasible,
+           operations_research::ConstraintHandlerCallbackType::kEnfoPs);
+   if (!gresult.ok()) {
+-    SCIPerrorMessage(gresult.status().ToString().c_str());
++    SCIPerrorMessage("%s", gresult.status().ToString().c_str());
+     return SCIP_ERROR;
+   }
+   *result = operations_research::ConvertGScipCallbackResult(*gresult);
+@@ -508,7 +508,7 @@ static SCIP_DECL_CONSSEPALP(SeparateLpC) {
+           conss, nusefulconss, nconss, DoSeparateLp,
+           operations_research::ConstraintHandlerCallbackType::kSepaLp);
+   if (!gresult.ok()) {
+-    SCIPerrorMessage(gresult.status().ToString().c_str());
++    SCIPerrorMessage("%s", gresult.status().ToString().c_str());
+     return SCIP_ERROR;
+   }
+   *result = operations_research::ConvertGScipCallbackResult(*gresult);
+@@ -531,7 +531,7 @@ static SCIP_DECL_CONSSEPASOL(SeparatePrimalSolutionC) {
+           conss, nusefulconss, nconss, DoSeparateSolution,
+           operations_research::ConstraintHandlerCallbackType::kSepaSol);
+   if (!gresult.ok()) {
+-    SCIPerrorMessage(gresult.status().ToString().c_str());
++    SCIPerrorMessage("%s", gresult.status().ToString().c_str());
+     return SCIP_ERROR;
+   }
+   *result = operations_research::ConvertGScipCallbackResult(*gresult);
