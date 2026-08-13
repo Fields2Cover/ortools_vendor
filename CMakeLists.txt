@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(ortools_vendor LANGUAGES CXX VERSION "9.9.0")
+project(ortools_vendor LANGUAGES CXX VERSION "9.9.1")
 
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_vendor_package REQUIRED)
